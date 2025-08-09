@@ -1,0 +1,145 @@
+/* Font face for JetBrains Mono */
+@font-face {
+  font-family: jetbrains;
+  src: url("../fonts/jetbrains/JetBrainsMono-Bold.ttf");
+}
+
+/* Font face for Pacifico */
+@font-face {
+  font-family: pacifico;
+  src: url("../fonts/Pacifico-Regular.ttf");
+}
+
+/* CSS variables for theme colors */
+:root {
+  --primary-color: rgb(0, 110, 255); /* Main blue color */
+  --primary-color-input: rgba(0, 110, 255, 0.2); /* Input background color */
+  --blur-bg-color: rgba(173, 173, 173, 0.164); /* Card background blur */
+  --primary-color-border: rgba(255, 255, 255, 0.311); /* Card border color */
+  --success-color: rgb(0, 211, 0); /* Success (green) color */
+  --error-color: rgb(255, 30, 0); /* Error (red) color */
+}
+
+/* Main body styles */
+body {
+  padding: 0;
+  margin: 0;
+  color: #fff; /* White text */
+  font-family: jetbrains;
+}
+
+/* Canvas for background animation */
+#canvas {
+  position: fixed;
+}
+
+/* App container centering */
+.app {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Responsive container */
+.container {
+  width: 80%;
+  margin: 0 auto 0 auto;
+}
+
+/* Card component styles */
+.card {
+  background: var(--blur-bg-color); /* Blurred background */
+  backdrop-filter: blur(20px); /* Apply blur effect */
+  border: 1px solid var(--primary-color-border); /* Card border */
+  padding: 10px;
+  border-radius: 5px;
+  width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  /* Card header styles */
+  .card-header {
+    font-size: 30px;
+    font-family: pacifico;
+    h4 {
+      height: 5px;
+    }
+  }
+  /* Card content styles */
+  .card-content {
+    font-size: 16px;
+    text-align: center;
+    margin: 10px 0;
+    display: flex;
+    flex-direction: column;
+  }
+  /* QR code image styles */
+  .qrcode {
+    img {
+      border-radius: 5px;
+      margin: 0 auto 0 auto;
+    }
+  }
+}
+
+/* Form control styles */
+.form-control {
+  * {
+    height: 30px;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid var(--primary-color);
+    background-color: var(--primary-color-input);
+    padding-left: 3px;
+    color: #fff;
+  }
+}
+
+/* Success toast notification styles */
+.success-toast {
+  background: var(--primary-color);
+  width: 300px;
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  border-radius: 5px;
+  padding: 10px;
+  z-index: 1000;
+  pointer-events: none;
+}
+/* Error toast notification styles */
+.error-toast {
+  background: var(--primary-color);
+  border: 2px solid var(--error-color);
+  width: 300px;
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  border-radius: 5px;
+  padding: 10px;
+  z-index: 1000;
+  pointer-events: none;
+}
+
+/* Toast title section styles */
+.toast-title {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  h3 {
+    height: 100%;
+    margin-bottom: auto;
+    margin-top: auto;
+  }
+  i {
+    font-size: 30px;
+    color: var(--success-color);
+  }
+}
+/* Toast notification base styles */
+.toast {
+  transition: opacity 1s ease;
+  opacity: 0;
+}

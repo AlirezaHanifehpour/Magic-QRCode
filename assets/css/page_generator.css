@@ -1,0 +1,160 @@
+/* Main container for user input form */
+.get-user-items {
+  background: rgba(173, 173, 173, 0.164); /* Blurred background color */
+  backdrop-filter: blur(20px); /* Apply blur effect */
+  border: 1px solid rgba(255, 255, 255, 0.311); /* Border color */
+  border-radius: 5px; /* Rounded corners */
+  width: 400px; /* Fixed width */
+  display: flex;
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+  flex-direction: column; /* Stack children vertically */
+
+  /* Header section styles */
+  .card-header {
+    font-size: 30px;
+    font-family: pacifico;
+    h4 {
+      height: 5px;
+    }
+  }
+
+  /* Content section styles */
+  .card-content {
+    font-family: jetbrains;
+    font-size: 16px;
+    text-align: center;
+    margin: 10px 0;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+
+    /* Form styles */
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+
+      /* Textarea for about section */
+      textarea {
+        height: 100px;
+      }
+
+      /* All form elements */
+      * {
+        width: 99%;
+        font-family: jetbrains;
+        &::placeholder {
+          color: rgba(255, 255, 255, 0.319); /* Placeholder color */
+        }
+      }
+
+      /* Profile button styles */
+      button {
+        padding: 10px;
+        background-color: var(--primary-color);
+        border: none;
+        color: white;
+        border-radius: 5px;
+        width: 100%;
+        cursor: pointer;
+        transition: 0.25s ease;
+        &:hover {
+          background-color: rgb(0, 80, 255);
+        }
+      }
+
+      /* Image upload field styles */
+      .image-field {
+        position: relative;
+        height: 30px;
+        label {
+          position: absolute;
+          background-color: var(--primary-color);
+          height: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-radius: 5px;
+          cursor: pointer;
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .get-user-items {
+    width: 100%;
+  }
+}
+
+/* Main card container styling */
+.card {
+  width: 500px; /* Card width */
+  padding: 0; /* Remove default padding */
+
+  /* Card title section */
+  .card-title {
+    display: flex; /* Use flex layout */
+    flex-direction: column; /* Stack children vertically */
+    text-align: center; /* Center text */
+    margin-top: 50px; /* Space from top */
+
+    /* First child in card-title (usually main title) */
+    *:first-child {
+      font-size: 20px; /* Larger font for main title */
+    }
+
+    /* Last child in card-title (usually subtitle) */
+    *:last-child {
+      font-size: 15px; /* Smaller font for subtitle */
+      color: rgba(255, 255, 255, 0.626); /* Light text color */
+    }
+
+    /* All direct children of card-title */
+    * {
+      margin: 0; /* Remove default margin */
+    }
+  }
+
+  /* Card image section */
+  .card-img {
+    background-color: var(
+      --primary-color-border
+    ); /* Background color from variable */
+    width: 100%; /* Full width */
+    height: 100px; /* Fixed height */
+    border-top-right-radius: 5px; /* Rounded top right corner */
+    border-top-left-radius: 5px; /* Rounded top left corner */
+    display: flex; /* Flex layout for centering */
+    justify-content: center; /* Center content horizontally */
+    position: relative; /* For absolute positioning of img */
+    border-bottom: 2px solid var(--primary-color-border); /* Bottom border */
+
+    /* Image inside card-img */
+    img {
+      width: 100px; /* Image width */
+      height: 100px; /* Image height */
+      position: absolute; /* Position over background */
+      transform: translateY(20px); /* Move image down */
+      border-radius: 5px; /* Rounded corners */
+      border: 10px solid var(--primary-color-border); /* Thick border */
+    }
+  }
+
+  /* Card content section */
+  .card-content {
+    margin: 0; /* Remove default margin */
+    padding: 0 10px 0 10px;
+  }
+
+}
+
+/* Responsive: Make card full width on small screens */
+@media screen and (max-width: 760px) {
+  .card {
+    width: 100%;
+  }
+}

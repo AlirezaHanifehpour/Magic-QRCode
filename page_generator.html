@@ -1,0 +1,108 @@
+<!-- Profile Page Generator HTML -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Magic QRCode</title>
+    <!-- Toastify CSS for notifications -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+    <!-- Main styles -->
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <!-- Page generator specific styles -->
+    <link rel="stylesheet" href="./assets/css/page_generator.css" />
+  </head>
+  <body>
+    <template id="card-template">
+      <div class="card">
+        <!-- Profile image section -->
+        <div class="card-img">
+          <img src="" alt="" />
+        </div>
+        <!-- User name and email -->
+        <div class="card-title">
+          <p class="user-name"></p>
+          <p class="user-email"></p>
+        </div>
+        <!-- About user section -->
+        <div class="card-content">
+          <p></p>
+        </div>
+      </div>
+    </template>
+
+    <!-- Animated background canvas -->
+    <canvas id="canvas"></canvas>
+    <div class="app container">
+      <div class="get-user-items">
+        <!-- Header section -->
+        <div class="card-header">
+          <h4>Magic QRCode</h4>
+        </div>
+
+        <div class="card-content">
+          <!-- Instructions for the user -->
+          <p>Please write about yourself</p>
+          <!-- Profile form -->
+          <form action="#" id="profile-form">
+            <!-- Image upload field -->
+            <div class="image-field">
+              <label for="image-input" id="image-label"
+                >Choose your image</label
+              >
+              <input type="file" accept="image/*" id="image-input" />
+            </div>
+            <!-- Email input field -->
+            <div class="form-control">
+              <input type="text" placeholder="Your email" id="email-input" />
+            </div>
+            <!-- Name input field -->
+            <div class="form-control">
+              <input type="text" placeholder="Your name" id="name-input" />
+            </div>
+            <!-- About textarea field -->
+            <div class="form-control">
+              <textarea
+                placeholder="Write about yourself"
+                id="about-input"
+              ></textarea>
+            </div>
+            <button type="button" class="text-generator">
+              Generate a text
+            </button>
+            <!-- Submit button -->
+            <button type="submit" class="btn-profile">
+              Generate Profile Page
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Toastify JS for notifications -->
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/toastify-js"
+    ></script>
+    <!-- QRCode library for generating QR codes -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"
+      integrity="sha512-CNgIRecGo7nphbeZ04Sc13ka07paqdeTu0WR1IM4kNcpmBAUSHSQX0FslNhTDadL4O5SAGapGt4FodqL8My0mA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <!-- Page generator JS (handles form logic) -->
+    <script src="./assets/js/page_generator.js" type="module"></script>
+    <!-- Main app JS (background animation, etc.) -->
+    <script src="./assets/js/app.js"></script>
+  </body>
+</html>
